@@ -1,30 +1,18 @@
-#include <cmath>
-#include <cstdio>
-#include <vector>
 #include <iostream>
 #include <algorithm>
+#include <cmath>
 using namespace std;
 
+
 int main(){
-    int t;
-    cin >> t;
-    for(int a0 = 0; a0 < t; a0++){
-        int n;
-        cin >> n;
-        int re;
-        int digit;
-        int number  = n;
-        int count = 0;
-        while(n>0){
-            digit = n%10;
-           
-                
-            if(digit != 0 && number%digit ==0){
-                count++;
-            }
-            n /= 10;
-        }
-        cout<<count<<endl;
-    }
-    return 0;
+  try
+  {
+    throw 20;   
+  }
+  catch(int e)
+  {
+    cout<<"An exception occured";
+    cout<< "exception NR."<<e << endl;
+  }
+  return 0;
 }
