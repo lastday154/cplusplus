@@ -2,22 +2,24 @@
 #include <algorithm>
 #include <cmath>
 #include <vector>
+#include <string>
+#include <set>
 using namespace std;
 
 
 int main(){
   
-  vector<string> v;
-  for(string s;cin>>s;){
-    v.push_back(s);
+  string line;
+  getline(cin,line);
+  set<char> mySet;
+  for(char ch: line){
+    if(ch== ' ') continue;
+    mySet.insert(tolower(ch));
   }
-  cout<<v.size()<<"\n";
-
-  sort(v.begin(),v.end());
-  for(int i=0;i<v.size();i++){
-    if(i==0 || v[i-1] != v[i]){
-      cout<<v[i]<<"\n";
-    }
+  if(mySet.size() ==26){
+    cout<< "pangram" <<endl;
+  }else{
+    cout<< "not pangram"<<endl;
   }
   return 0;
 }
